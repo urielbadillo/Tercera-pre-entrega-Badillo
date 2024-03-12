@@ -15,3 +15,49 @@
   </div>
 {% endblock principal %}
 
+{% block content %}
+<div class="container">
+    <div class="row">
+      <!-- Formulario -->
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="compania" class="form-label">Compañía</label>
+            <input type="text" class="form-control" id="compania" name="compania">
+          </div>
+          <div class="mb-3">
+            <label for="costo" class="form-label">Costo</label>
+            <input type="number" class="form-control" id="costo" name="costo">
+          </div>
+          <div class="mb-3">
+            <label for="licencia" class="form-label">Licencia</label>
+            <input type="text" class="form-control" id="licencia" name="licencia">
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+<div class="col-md-6">
+<table class="table table-striped">
+    <thead>
+    <tr>
+     <th>ID</th>
+      <th>Compañía</th>
+      <th>Costo</th>
+      <th>Licencia</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for c in appliance %}
+    <tr>
+      <td>{{ c.id}}</td>
+      <td>{{ c.compañia}}</td>
+      <td>{{ c.costo}}</td>
+      <td>{{ c.licencia}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
+
+
