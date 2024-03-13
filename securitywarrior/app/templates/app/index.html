@@ -21,6 +21,7 @@
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
+            {% block indice %}
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
                     <a class="navbar-brand" href="{% url 'home' %}"><span class="fw-bolder text-primary">Samurai Security INC.</span></a>
@@ -31,10 +32,12 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'cursos' %}">Capacitaciones</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'servicios' %}">Nuestros servicios</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'eventos' %}">Eventos proximos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'formularios' %}">Formularios</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
+            {% endblock indice %}
             <!-- Header-->
             {% block principal %}
             <header class="py-5">
@@ -53,12 +56,15 @@
                             </div>
                         </div>
                         <div class="col-xxl-7">
+                            {% block imagen %}
                             <!-- Header profile picture-->
                             <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                                 <div class="profile bg-gradient-primary-to-secondary">
                                     <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                                     <!-- Watch a tutorial on how to do this on YouTube (link)-->
+
                                     <img class="profile-img" src="{% static 'assets/profile.png' %}" alt="..." />
+
                                     <div class="dots-1">
                                         <!-- SVG Dots-->
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
@@ -173,6 +179,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endblock imagen %}
                         </div>
                     </div>
                 </div>
@@ -197,7 +204,7 @@
                         </div>
                     </div>
                 </div>
-            </section> 
+            </section>
             {% endblock content %}
         </main>
         <!-- Footer-->

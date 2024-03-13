@@ -4,26 +4,26 @@ from django.db import models
 # Appliance, cursos, servicios, eventos
 
 
-class appliance(models.Model):
-    compañia = models.CharField(max_length=40)
+class Appliance(models.Model):
+    compania = models.CharField(max_length=40)
     costo = models.IntegerField()
     licencia = models.CharField(max_length=40)
 
 
-class cursos(models.Model):
+class Cursos(models.Model):
     nombre = models.CharField(max_length=40)
     costo = models.IntegerField()
     tiempo = models.CharField(max_length=40)
     descripcion = models.CharField(max_length=40)
 
 
-class servicios(models.Model):
+class Servicios(models.Model):
     nombre = models.CharField(max_length=40)
     costo = models.IntegerField()
     caracteristicas = models.CharField(max_length=40)
 
 
-class eventos(models.Model):
+class Eventos(models.Model):
     nombre = models.CharField(max_length=40)
     fecha = models.DateField()
     costo = models.IntegerField()

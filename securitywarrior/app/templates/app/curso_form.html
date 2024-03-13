@@ -1,0 +1,40 @@
+{% extends "app/index.html" %}
+
+{% block indice %}
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <div class="container px-5">
+        <a class="navbar-brand" href="{% url 'home' %}"><span class="fw-bolder text-primary">Samurai Security INC.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'appliance_form' %}">Formulario Appliance</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'servicios_form' %}">Formulario Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'eventos_form' %}">Formulario Eventos</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'curso_form' %}">Formulario Capacitaciones</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock indice %}
+
+{% block principal %}
+<div class="container px-5 pb-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-xxl-5">
+        <div class="text-center">
+          <div class="fs-3 fw-bold text-muted">Formulario de Cursos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock principal %}
+
+{% block content %}
+        <form action="" method="post"> {% csrf_token %}
+        <table>
+          {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-primary">Guardar en BD</button>
+        </form>
+{% endblock content %}
