@@ -13,17 +13,17 @@ def appliance_vista(request):
 
 
 def cursos_vista(request):
-    contexto = {"curso": Cursos.objects.all()}
+    contexto = {"cursitoss": Cursos.objects.all()}
     return render(request, "app/cursos.html", contexto)
 
 
 def servicios_vista(request):
-    contexto = {"servicio": Servicios.objects.all()}
+    contexto = {"servicitoo": Servicios.objects.all()}
     return render(request, "app/servicios.html", contexto)
 
 
 def eventos_vista(request):
-    contexto = {"evento": Eventos.objects.all()}
+    contexto = {"eventitos": Eventos.objects.all()}
     return render(request, "app/eventos.html", contexto)
 
 
