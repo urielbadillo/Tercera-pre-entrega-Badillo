@@ -8,9 +8,36 @@
           <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
             <div class="text-uppercase">Confidencialidad · Integridad · Disponibilidad</div>
           </div>
-          <div class="fs-3 fw-bold text-muted">Da un vistazo a nuestras proximos eventos y conferencias, no te pierdas esta oportunidad</div>
+          <div class="fs-3 fw-bold text-muted">Nuestros proximos eventos y conferencias</div>
         </div>
       </div>
     </div>
   </div>
 {% endblock principal %}
+
+{% block content %}
+<div class="container">
+<table class="table table-striped">
+    <thead>
+    <tr>
+     <th>ID</th>
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Costo</th>
+      <th>Lugar</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for c in eventos %}
+    <tr>
+      <td>{{ c.id}}</td>
+      <td>{{ c.nombre}}</td>
+      <td>{{ c.fecha}}</td>
+      <td>{{ c.costo}}</td>
+      <td>{{ c.lugar}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

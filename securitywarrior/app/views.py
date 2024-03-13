@@ -13,18 +13,18 @@ def appliance_vista(request):
 
 
 def cursos_vista(request):
-    contexto = {"appliance": Cursos.objects.all()}
-    return render(request, "app/cursos.html")
+    contexto = {"curso": Cursos.objects.all()}
+    return render(request, "app/cursos.html", contexto)
 
 
 def servicios_vista(request):
-    contexto = {"appliance": Servicios.objects.all()}
-    return render(request, "app/servicios.html")
+    contexto = {"servicio": Servicios.objects.all()}
+    return render(request, "app/servicios.html", contexto)
 
 
 def eventos_vista(request):
-    contexto = {"appliance": Eventos.objects.all()}
-    return render(request, "app/eventos.html")
+    contexto = {"evento": Eventos.objects.all()}
+    return render(request, "app/eventos.html", contexto)
 
 
 def formularios_vista(request):
@@ -55,6 +55,7 @@ def appliance_form(request):
 
 def cursos_form(request):
     if request.method == "POST":
+        miform = Cursos_Forms(request.POST)
         if miform.is_valid():
             curso_nombre = miform.cleaned_data.get("nombre")
             curso_costo = miform.cleaned_data.get("costo")
@@ -75,6 +76,7 @@ def cursos_form(request):
 
 def servicios_form(request):
     if request.method == "POST":
+        miform = Servicios_Forms(request.POST)
         if miform.is_valid():
             servicio_nombre = miform.cleaned_data.get("nombre")
             servicio_costo = miform.cleaned_data.get("costo")
@@ -93,6 +95,7 @@ def servicios_form(request):
 
 def eventos_form(request):
     if request.method == "POST":
+        miform = Eventos_Forms(request.POST)
         if miform.is_valid():
             evento_nombre = miform.cleaned_data.get("nombre")
             evento_fecha = miform.cleaned_data.get("fecha")
